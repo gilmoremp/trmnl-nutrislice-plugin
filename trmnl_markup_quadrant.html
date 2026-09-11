@@ -1,35 +1,28 @@
-<div class="layout layout--top layout--stretch-x p--0 gap--0">
-  <table class="table table--condensed m--0 w--full">
-    <tbody>
-      {% for day in days %}
-        <tr>
-          <!-- Column 1: Day & Date -->
-          <td class="w--20 lg:w--18 text--left px--2 pb--1 lg:pb--3 {% if forloop.first %}pt--1 lg:pt--4{% else %}pt--0 lg:pt--3{% endif %}">
-            <!-- Standard View -->
-            <div class="lg:hidden">
-              <div class="font--bold text--sm" style="line-height: 1;">{{ day.date | date: "%a" | upcase }}</div>
-              <div class="text--xs" style="line-height: 1;">{{ day.date | date: "%m/%d" }}</div>
-            </div>
-            
-            <!-- TRMNL X View (Restored to stable non-bold state) -->
-            <div class="hidden lg:block">
-              <div class="title title--base" style="line-height: 1;">{{ day.date | date: "%a" | upcase }}</div>
-              <div class="label text--xl" style="line-height: 1;">{{ day.date | date: "%m/%d" }}</div>
-            </div>
-          </td>
+<div class="layout layout--center layout--stretch-x p--2 gap--1">
+  {% assign today = "now" | date: "%Y-%m-%d" %}
+  {% assign found = false %}
+  {% for day in days %}
+    {% if day.date == today %}
+      {% assign found = true %}
+      <div class="text--center w--full">
+        <div class="font--bold text--lg" style="line-height: 1;">{{ day.date | date: "%A" | upcase }}</div>
 
-          <!-- Column 2: Meal Name -->
-          <td class="pl--0 pb--1 lg:pb--3 {% if forloop.first %}pt--1 lg:pt--4{% else %}pt--0 lg:pt--3{% endif %}">
-            <div class="font--bold text--sm lg:title--base clamp--2 lg:clamp--1" style="line-height: 1.1;">{{ day.main }}</div>
-          </td>
-        </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+        <div class="text--xs label--underline mt--2" style="line-height: 1;">Breakfast</div>
+        <div class="title title--small font--bold clamp--2" style="line-height: 1.1;">{{ day.breakfast_main }}</div>
+
+        <div class="text--xs label--underline mt--2" style="line-height: 1;">Lunch</div>
+        <div class="title title--small font--bold clamp--2" style="line-height: 1.1;">{{ day.lunch_main }}</div>
+      </div>
+    {% endif %}
+  {% endfor %}
+  {% unless found %}
+    <div class="text--center w--full">
+      <div class="title title--small font--bold">No menu today</div>
+    </div>
+  {% endunless %}
 </div>
 
 <div class="title_bar">
-  <img class="image" src="https://trmnl.com/images/plugins/trmnl--render.svg">
   <span class="title">{{ school_name }}</span>
-  <span class="instance">Lunch Menu</span>
+  <span class="instance">Today</span>
 </div>
