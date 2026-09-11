@@ -1,4 +1,35 @@
 {
   "school_name": "School Menu",
-  "days": []
+  "days": [
+    {
+      "date": "2026-09-07",
+      "main": "No Lunch",
+      "image": "https://api.nutrislice.com/content/asset/serve/image/png/33730",
+      "sides": ""
+    },
+    {
+      "date": "2026-09-08",
+      "main": "Variety Cereal (allergens vary)",
+      "image": "https://client-food-images.nutrislice.com/images/6i/6ijoitB9LE4LvzCkMdxnx8/1491236993_673526__cereal-cheerios-in-bowl-oceansid.jpg.1024x0_q85.jpg",
+      "sides": "or, Variety Nutrigrain Bar, with, Variety Yogurt, or, Hard Cooked Egg, or, Variety Cheese Stick, Wild Mike's Cheese Bites, Marinara Sauce, Corn on the Cob, Brunch Box (Snackin' Waffle w/Variety Yogurt & Hard Cooked Egg), Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+    },
+    {
+      "date": "2026-09-09",
+      "main": "Yogurt Parfait",
+      "image": "https://api.nutrislice.com/content/asset/serve/image/jpeg/228129/thumbnail2",
+      "sides": "Granola, Cheese Omelet, Cinnamon Roll, Sweet Potato Tots, U Pick a Pizza (Mini Flatbread, Turkey Pepperoni, Marinara Sauce & Mozzarella Chz), Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+    },
+    {
+      "date": "2026-09-10",
+      "main": "Homemade Muffin",
+      "image": "https://api.nutrislice.com/content/asset/serve/image/jpg/21597/thumbnail2",
+      "sides": "Chicken Sausage Links, Chicken TIkka Masala, Brown Rice, Naan, Roasted Chickpeas, Chicken Caesar Salad, Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+    },
+    {
+      "date": "2026-09-11",
+      "main": "Oatmeal Brekkie",
+      "image": "https://api.nutrislice.com/content/asset/serve/image/JPG/224715/thumbnail2",
+      "sides": "Mini Corn Dogs, Macaroni and Cheese, Broccoli, Yum Box (Chocolate Chip Banana Bread, Cheez Its, Yogurt & Turkey Breast Stick or Cheese Stick), Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+    }
+  ]
 }
