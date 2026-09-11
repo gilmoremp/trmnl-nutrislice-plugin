@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    env:
+      DISTRICT: ${{ vars.NUTRISLICE_DISTRICT }}
+      SCHOOL: ${{ vars.NUTRISLICE_SCHOOL_ID }}
+      MEAL_TYPE: ${{ vars.NUTRISLICE_MEAL_TYPE }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -23,18 +27,14 @@ jobs:
           else
             FETCH_DATE=$(date +%Y/%m/%d)
           fi
-          
-          DISTRICT="${{ vars.NUTRISLICE_DISTRICT }}"
-          SCHOOL="${{ vars.NUTRISLICE_SCHOOL_ID }}"
-          MEAL_TYPE="${{ vars.NUTRISLICE_MEAL_TYPE }}"
-          
+
           if [ -z "$DISTRICT" ]; then echo "Error: NUTRISLICE_DISTRICT variable is not set" && exit 1; fi
           if [ -z "$SCHOOL" ]; then echo "Error: NUTRISLICE_SCHOOL_ID variable is not set" && exit 1; fi
           if [ -z "$MEAL_TYPE" ]; then MEAL_TYPE="breakfast-lunch"; fi
 
           echo "Fetching menu for configured school on date: $FETCH_DATE (meal type: $MEAL_TYPE)"
           curl -s "https://${DISTRICT}.api.nutrislice.com/menu/api/weeks/school/${SCHOOL}/menu-type/${MEAL_TYPE}/${FETCH_DATE}/?format=json" > raw.json
-          jq --arg school_name "School Menu" '{school_name: $school_name, days: [.days[] | select(.menu_items | length > 0) | {date: .date, main: ([.menu_items[] | select(.food != null) | .food.name][0] // "No Lunch"), image: (([.menu_items[] | select(.image != null and .image != "") | .image][0]) // ([.menu_items[] | select(.food.image_url != null and .food.image_url != "") | .food.image_url][0]) // ""), sides: ([.menu_items[] | select(.food != null) | .food.name][1:] | join(", "))}]}' raw.json > menu.json
+          jq --arg school_name "School Menu" '{school_name: $school_name, days: [.days[] | select(.menu_items | length > 0) | . as $day | ($day.menu_items) as $items | ($items | map(select(.is_holiday==true)) | first) as $holiday | ($items | map(select(.is_station_header==true and .text=="Breakfast")) | first.station_id) as $bid | ($items | map(select(.is_station_header==true and .text=="Lunch")) | first.station_id) as $lid | {date: $day.date, breakfast_main: (($items | map(select($bid != null and .station_id==$bid and .food.food_category=="entree")) | first.food.name) // $holiday.text // "No Breakfast"), breakfast_image: (($items | map(select($bid != null and .station_id==$bid and .food.image_url != null and .food.image_url != "")) | first.food.image_url) // $holiday.image // ""), lunch_main: (($items | map(select($lid != null and .station_id==$lid and .food.food_category=="entree")) | first.food.name) // $holiday.text // "No Lunch"), lunch_image: (($items | map(select($lid != null and .station_id==$lid and .food.image_url != null and .food.image_url != "")) | first.food.image_url) // $holiday.image // "")}]}' raw.json > menu.json
           echo "Generated menu.json"
           cat menu.json
           rm raw.json
