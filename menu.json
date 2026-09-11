@@ -3,33 +3,38 @@
   "days": [
     {
       "date": "2026-09-07",
-      "main": "No Lunch",
-      "image": "https://api.nutrislice.com/content/asset/serve/image/png/33730",
-      "sides": ""
+      "breakfast_main": "К-12 Labor Day",
+      "breakfast_image": "https://api.nutrislice.com/content/asset/serve/image/png/33730",
+      "lunch_main": "К-12 Labor Day",
+      "lunch_image": "https://api.nutrislice.com/content/asset/serve/image/png/33730"
     },
     {
       "date": "2026-09-08",
-      "main": "Variety Cereal (allergens vary)",
-      "image": "https://client-food-images.nutrislice.com/images/6i/6ijoitB9LE4LvzCkMdxnx8/1491236993_673526__cereal-cheerios-in-bowl-oceansid.jpg.1024x0_q85.jpg",
-      "sides": "or, Variety Nutrigrain Bar, with, Variety Yogurt, or, Hard Cooked Egg, or, Variety Cheese Stick, Wild Mike's Cheese Bites, Marinara Sauce, Corn on the Cob, Brunch Box (Snackin' Waffle w/Variety Yogurt & Hard Cooked Egg), Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+      "breakfast_main": "Variety Cereal (allergens vary)",
+      "breakfast_image": "https://client-food-images.nutrislice.com/images/6i/6ijoitB9LE4LvzCkMdxnx8/1491236993_673526__cereal-cheerios-in-bowl-oceansid.jpg.1024x0_q85.jpg",
+      "lunch_main": "Wild Mike's Cheese Bites",
+      "lunch_image": "https://api.nutrislice.com/content/asset/serve/image/jpg/61688/thumbnail2"
     },
     {
       "date": "2026-09-09",
-      "main": "Yogurt Parfait",
-      "image": "https://api.nutrislice.com/content/asset/serve/image/jpeg/228129/thumbnail2",
-      "sides": "Granola, Cheese Omelet, Cinnamon Roll, Sweet Potato Tots, U Pick a Pizza (Mini Flatbread, Turkey Pepperoni, Marinara Sauce & Mozzarella Chz), Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+      "breakfast_main": "Granola",
+      "breakfast_image": "https://api.nutrislice.com/content/asset/serve/image/jpeg/228129/thumbnail2",
+      "lunch_main": "Cheese Omelet",
+      "lunch_image": "https://client-food-images.nutrislice.com/images/3n/3nE8fr3rk3TkWaHwsr3FkE/1491237007_335119__Omelet-m.jpg.1024x0_q85.jpg"
     },
     {
       "date": "2026-09-10",
-      "main": "Homemade Muffin",
-      "image": "https://api.nutrislice.com/content/asset/serve/image/jpg/21597/thumbnail2",
-      "sides": "Chicken Sausage Links, Chicken TIkka Masala, Brown Rice, Naan, Roasted Chickpeas, Chicken Caesar Salad, Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+      "breakfast_main": "No Breakfast",
+      "breakfast_image": "",
+      "lunch_main": "Chicken TIkka Masala",
+      "lunch_image": "https://api.nutrislice.com/content/asset/serve/image/jpg/21597/thumbnail2"
     },
     {
       "date": "2026-09-11",
-      "main": "Oatmeal Brekkie",
-      "image": "https://api.nutrislice.com/content/asset/serve/image/JPG/224715/thumbnail2",
-      "sides": "Mini Corn Dogs, Macaroni and Cheese, Broccoli, Yum Box (Chocolate Chip Banana Bread, Cheez Its, Yogurt & Turkey Breast Stick or Cheese Stick), Variety Cold Sandwiches (allergens vary), or, Grape or Strawberry Uncrustable Sandwich, with, Variety Cheese Stick, or, Variety Yogurt, Granola"
+      "breakfast_main": "No Breakfast",
+      "breakfast_image": "https://api.nutrislice.com/content/asset/serve/image/JPG/224715/thumbnail2",
+      "lunch_main": "Mini Corn Dogs",
+      "lunch_image": "https://client-food-images.nutrislice.com/images/tn/tnQb6EHRgZJUkizkk3SUsm/1491234513_122091__2015-nutrislice-entree-mini-corn-dogs-1920x1080.jpg.1024x0_q85.jpg"
     }
   ]
 }
